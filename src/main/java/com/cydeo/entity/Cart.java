@@ -21,8 +21,10 @@ public class Cart {
     private Customer customer;
     @ManyToOne
     private Discount discount;
-    @OneToOne
-    private Order order;
+
+   @OneToOne(mappedBy = "cart")
+     private Order order;
+
     @OneToMany(mappedBy = "cart")
     private List<cartItem> cartItem;
 
